@@ -1,0 +1,34 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h2>Job Allocation List</h2>
+    </div>
+    <div class="panel-body">
+        <table class="table table-striped">
+        <thead>
+            <tr>
+            <td></td>
+            <th>Job No</th>
+            <th>Dep Reg No</th>
+            <th>Emp Reg No</th>
+            <th>From DateTime</th>
+            <th>To DateTime</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let joballoaction of joballoactions | async; let i = index">
+            <td>{{i+1}}</td>
+            <td>{{joballoaction.job_no}}</td>
+            <td>{{joballoaction.department.dep_regNo}}</td>
+            <td>{{joballoaction.employee.emp_regNo}}</td>
+            <td>{{joballoaction.job_fromdate}}</td>
+            <td>{{joballoaction.job_todate}}</td>
+            <td>
+                <button (click)="deleteJoballocation(joballoaction.job_id)" class="btn btn-danger">Delete</button>
+                <button (click)="updateJoballocation(joballoaction.job_id)" class="btn btn-success" style="margin-left: 10px">Update</button>
+            </td>
+            </tr>
+        </tbody>
+        </table>
+    </div>
+</div>
+        

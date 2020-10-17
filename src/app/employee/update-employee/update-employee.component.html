@@ -1,0 +1,42 @@
+<h3>Create Employee</h3>
+<div [hidden]="submitted" style="width: 400px;">
+  <form (ngSubmit)="onSubmit()">
+
+    <div class="form-group">
+        <label for="name">Employee Reg No</label>
+        <input type="text" class="form-control" id="emp_regNo" required [(ngModel)]="employee.emp_regNo" name="emp_regNo">
+    </div>
+
+    <div class="form-group">
+      <label for="name">Employee Name</label>
+      <input type="text" class="form-control" id="emp_name" required [(ngModel)]="employee.emp_name" name="emp_name">
+    </div>
+
+    <div class="form-group">
+    <label for="name">Employee Gender</label>
+    <select class="form-control" id="emp_gender" [(ngModel)]="employee.emp_gender" name="emp_gender">
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+    </select>
+    </div>
+
+    <div class="form-group">
+        <label for="name">Employee Address</label>
+        <input type="text" class="form-control" id="emp_address" required [(ngModel)]="employee.emp_address" name="emp_address">
+    </div>
+
+    <div class="form-group">
+        <label for="name">Employee Phone</label>
+        <input type="text" class="form-control" id="emp_phone" required [(ngModel)]="employee.emp_phone" name="emp_phone">
+    </div>
+    
+
+    <button type="submit" class="btn btn-success">Submit</button>
+
+  </form>
+</div>
+
+<div [hidden]="!submitted">
+  <h4>You submitted successfully!</h4>
+  <!-- <button class="btn btn-success" (click)="newEmployee()">Add</button> -->
+</div>

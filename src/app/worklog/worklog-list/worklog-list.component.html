@@ -1,0 +1,31 @@
+<div class="panel panel-primary">
+        <div class="panel-heading">
+            <h2>Work Log History</h2>
+        </div>
+        <div class="panel-body">
+            <table class="table table-striped">
+            <thead>
+                <tr>
+                <td></td>
+                <th>Log id</th>
+                <th>Log date</th>
+                <th>Log table</th>
+                <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let worklog of worklogs | async; let i = index">
+                <td>{{i+1}}</td>
+                <td>{{worklog.history_id}}</td>
+                <td>{{worklog.datetime}}</td>
+                <td>{{worklog.entity}}</td>
+                <td>{{worklog.descr}}</td>
+                <!--<td>
+                    <button (click)="worklogDetails(worklog.history_id)" class="btn btn-info">Details</button>
+                </td>-->
+                </tr>
+            </tbody>
+            </table>
+        </div>
+    </div>
+            
